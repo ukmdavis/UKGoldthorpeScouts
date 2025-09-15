@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ukmdavis/UKGoldthorpeScouts   # e.g. goldthorpescouts/website
   branch: main
-  base_url: https://auth.decapcms.org         # hosted OAuth service for GitHub
+#  base_url: https://auth.decapcms.org         # hosted OAuth service for GitHub
 publish_mode: editorial_workflow
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
