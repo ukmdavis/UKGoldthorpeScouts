@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip }}">
+  <link rel="stylesheet" href="{{ "/assets/style.css" | relative_url }}">
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="{{ "/" | relative_url }}">🏕️ {{ site.title }}</a>
+      <a href="{{ "/sections/beavers/" | relative_url }}">Beavers</a>
+      <a href="{{ "/sections/cubs/" | relative_url }}">Cubs</a>
+      <a href="{{ "/sections/scouts/" | relative_url }}">Scouts</a>
+      <a href="{{ "/sections/explorers/" | relative_url }}">Explorers</a>
+      <a href="{{ "/badges/" | relative_url }}">Badges</a>
+      <a href="https://payments.goldthorpescouts.org.uk" target="_blank" rel="noopener">Shop</a>
+      <a href="https://www.onlinescoutmanager.co.uk/parents/" target="_blank" rel="noopener">Parent Portal</a>
+    </nav>
+    {{ content }}
+    <div class="footer">
+      © {{ "now" | date: "%Y" }} Goldthorpe Scout Group •
+      <a href="{{ "/admin/" | relative_url }}">Site admin</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+title: Goldthorpe Scouts
+description: Goldthorpe Scout Group — Beavers, Cubs, Scouts & Explorers
+baseurl: ""
+url: "https://goldthorpescouts.org.uk"
+theme: null
+
+collections:
+  sections:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "sections"
+    values:
+      layout: section
+
+markdown: kramdown
+
+# Optional: include future for drafts when using editorial workflow previews
+future: true

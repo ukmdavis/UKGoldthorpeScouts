@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # e.g. goldthorpescouts/website
+  branch: main
+  base_url: https://auth.decapcms.org         # hosted OAuth service for GitHub
+publish_mode: editorial_workflow
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: "https://goldthorpescouts.org.uk"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+  - name: "sections"
+    label: "Sections"
+    folder: "sections"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Meeting time", name: "meeting_time", widget: "string", required: false }
+      - { label: "Calendar URL (.ics)", name: "calendar_url", widget: "string", required: false }
+      - { label: "Badge ideas", name: "badge_ideas", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "badges_page"
+    label: "Badges Page"
+    files:
+      - file: "badges/index.md"
+        label: "Badges"
+        name: "badges"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body (intro above the grid)", name: "body", widget: "markdown", required: false }

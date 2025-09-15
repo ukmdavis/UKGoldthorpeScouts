@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<article class="grid">
+  <section class="card" style="grid-column:1/-1">
+    <h1>{{ page.title }}</h1>
+    {% if page.meeting_time %}<p class="small">Meets: {{ page.meeting_time }}</p>{% endif %}
+    {{ content }}
+  </section>
+
+  <section class="card">
+    <h2>Calendar</h2>
+    {% if page.calendar_url %}
+      <p>Subscribe to this section’s calendar:</p>
+      {% assign suburl = page.calendar_url | replace: "https://", "webcal://" | replace: "http://", "webcal://" %}
+      <p><a class="button" href="{{ suburl }}">Subscribe via Calendar app</a></p>
+      <p class="small">Direct subscription URL: <code>{{ page.calendar_url }}</code></p>
+    {% else %}
+      <p>Calendar coming soon.</p>
+    {% endif %}
+  </section>
+
+  <section class="card">
+    <h2>Quick Links</h2>
+    <ul>
+      <li><a href="https://payments.goldthorpescouts.org.uk" target="_blank" rel="noopener">Group Shop</a></li>
+      <li><a href="https://www.onlinescoutmanager.co.uk/parents/" target="_blank" rel="noopener">OSM Parent Portal</a></li>
+    </ul>
+  </section>
+
+  <section class="card" style="grid-column:1/-1">
+    <h2>Badge Ideas</h2>
+    {% if page.badge_ideas %}
+      <div class="badges">
+        {% for idea in page.badge_ideas %}
+          <span class="badge">{{ idea }}</span>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>We’ll add ideas here soon. Got suggestions? Tell your leader!</p>
+    {% endif %}
+  </section>
+</article>
